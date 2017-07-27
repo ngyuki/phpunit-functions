@@ -1,0 +1,23 @@
+language: php
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+php:
+  - 7.1
+
+env:
+  matrix:
+    - PHPUNIT=phpunit/phpunit:^4
+    - PHPUNIT=phpunit/phpunit:^5
+    - PHPUNIT=phpunit/phpunit:^6
+
+install:
+  - composer require --prefer-dist --dev $PHPUNIT
+  - composer install --prefer-dist
+
+script:
+  - vendor/bin/phpunit

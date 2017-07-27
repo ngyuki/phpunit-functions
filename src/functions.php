@@ -19,4 +19,5 @@ call_user_func(function () {
     if (file_exists($file)) {
         /** @noinspection PhpIncludeInspection */
         require_once $file;
-}});
+    }
+});

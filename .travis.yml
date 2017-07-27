@@ -8,15 +8,22 @@ cache:
 
 php:
   - 7.1
+  - 7.0
+  - 5.6
 
 env:
   matrix:
-    - PHPUNIT=phpunit/phpunit:^4
-    - PHPUNIT=phpunit/phpunit:^5
-    - PHPUNIT=phpunit/phpunit:^6
+    - PHPUNIT=4
+    - PHPUNIT=5
+    - PHPUNIT=6
+
+matrix:
+  exclude:
+    - php: 5.6
+      env: PHPUNIT=6
 
 install:
-  - composer require --prefer-dist --dev $PHPUNIT
+  - composer require --prefer-dist --dev phpunit/phpunit:^$PHPUNIT
   - composer install --prefer-dist
 
 script:

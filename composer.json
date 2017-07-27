@@ -1,0 +1,21 @@
+{
+    "name": "ngyuki/phpunit-functions",
+    "type": "library",
+    "license": "MIT",
+    "description": "PHPUnit Functions.php auto loader",
+    "keywords": [ "testing", "phpunit" ],
+    "homepage": "https://github.com/ngyuki/phpunit-functions",
+    "authors": [
+        {
+            "name": "Toshiyuki Goto",
+            "email": "ngyuki.jp@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {},
+    "autoload": {
+        "files": [
+            "src/functions.php"
+        ]
+    }
+}

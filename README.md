@@ -1,5 +1,7 @@
 # PHPUnit Functions.php auto loader
 
+[![Build Status](https://travis-ci.org/ngyuki/phpunit-functions.svg?branch=master)](https://travis-ci.org/ngyuki/phpunit-functions)
+
 PHPUnit contains `Functions.php` for shorthand of assertion.
 
 ```php

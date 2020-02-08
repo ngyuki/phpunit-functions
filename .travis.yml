@@ -7,20 +7,28 @@ cache:
     - $HOME/.composer/cache
 
 php:
+  - 7.4
+  - 7.3
+  - 7.2
   - 7.1
   - 7.0
-  - 5.6
 
 env:
   matrix:
-    - PHPUNIT=4
     - PHPUNIT=5
     - PHPUNIT=6
+    - PHPUNIT=7
+    - PHPUNIT=8
+    - PHPUNIT=9
 
 matrix:
   exclude:
-    - php: 5.6
-      env: PHPUNIT=6
+    - { php: 7.2, env: PHPUNIT=9 }
+    - { php: 7.1, env: PHPUNIT=9 }
+    - { php: 7.0, env: PHPUNIT=9 }
+    - { php: 7.1, env: PHPUNIT=8 }
+    - { php: 7.0, env: PHPUNIT=8 }
+    - { php: 7.0, env: PHPUNIT=7 }
 
 install:
   - composer require --prefer-dist --dev phpunit/phpunit:^$PHPUNIT

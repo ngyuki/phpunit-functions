@@ -1,7 +1,11 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
-// for PHPUnit 6
-if (!class_exists('PHPUnit_Framework_TestCase') && class_exists('PHPUnit\\Framework\\TestCase')) {
-    class_alias('PHPUnit\\Framework\\TestCase', str_replace('\\', '_', 'PHPUnit\\Framework\\TestCase'));
+if (class_exists(PHPUnit_Runner_Version::class)) {
+    $v = PHPUnit_Runner_Version::id();
 }
+else {
+    $v = PHPUnit\Runner\Version::id();
+}
+list($v)= explode('.', $v);
+define('PHPUNIT_MAJOR', (int)$v);
